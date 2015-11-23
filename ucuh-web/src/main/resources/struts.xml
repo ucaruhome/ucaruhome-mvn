@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+<constant name="struts.multipart.maxSize" value="1073741824"/>
+<constant name="struts.objectFactory" value="spring" />
+<constant name="struts.devMode" value="true"/>
+<constant name="struts.i18n.encoding" value="utf-8"></constant>
+
+
+	<!-- 设置 Struts2 action的后缀名 -->
+<constant name="struts.action.extension" value="action,,do" />
+	<!-- 热部署: 开发中如果改变了配置文件, Struts2 自动将自动重新加载 -->
+<constant name="struts.configuration.xml.reload" value="true" />
+	<!-- 国际化资源文件 -->
+<constant name="struts.custom.i18n.resources" value="globalMessages" />
+	
+	<include file="struts-user.xml"/>
+	<include file="struts-admin.xml"/>
+	<include file="struts-founder.xml"/>
+	<include file="struts-phone.xml"/>
+	<include file="struts-core.xml" />
+	<package name="hchh-default" extends="json-default" namespace="">
+		
+		<interceptors>
+			<!-- 定义登录检查拦截器 -->
+			<interceptor name="logincheck" class="com.ucuh.web.interceptor.LoginCheckInterceptor"/>
+			<!-- 定义登录检查拦截器栈 -->
+			<interceptor-stack name="loginstack">
+				<interceptor-ref name="logincheck"/>
+				<interceptor-ref name="defaultStack"/>
+			</interceptor-stack>
+		</interceptors>
+            
+		<!-- 将上述拦截器定义成默认的拦截器 -->
+		
+		
+		<!-- 定义全局的results -->
+		<global-results>
+			<result name="nologin">/frame/index.jsp</result>
+			<result name="notFound">/frame/index.jsp</result>
+		</global-results>
+		
+		
+		<!-- 异常处理，将框架不活的异常调用指定result处理 -->
+		<global-exception-mappings>
+			<exception-mapping result="error" exception="java.lang.Exception"/>
+		</global-exception-mappings>
+		
+		
+		<!-- 定义全局默认的action定义 -->
+		
+	</package>
+</struts>

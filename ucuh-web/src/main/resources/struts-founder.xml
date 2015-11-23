@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+    <!-- 评论管理，定制屋管理，举报管理，数据分析 -->
+	<package name="hchh-founder" extends="hchh-default" namespace="">
+		<default-interceptor-ref name="loginstack"/>
+        <!-- ==========================评论管理=================================================== -->
+        <!-- 查询list -->
+        <action name="commentslist" class="com.ucuh.web.action.comment.CommentAction" method="Commentslist">
+         <result name="success">/frame/lesson/commentslist.jsp</result>
+        </action>
+        <!-- 删除一条评论消息 -->
+        <action name="delComment" class="com.ucuh.web.action.comment.CommentAction" method="delComment">
+         <result name="success" type="json"></result>
+        </action>
+        <!-- 批量删除评论信息 -->
+        <action name="delManyComment" class="com.ucuh.web.action.comment.CommentAction" method="delManyComment">
+          <result name="success" type="json"></result>
+        </action>
+        <!--======================================== 全屋定制管理 ================================================-->
+        <action name="quanwudingzhislist" class="com.ucuh.web.action.quanwudingzhi.QuanwudingzhiAction" method="Quanwudingzhislist">
+          <result name="success">/frame/lesson/quanwudingzhilist.jsp</result>
+        </action>
+        <!-- ==========================================举报管理 ===================================================-->
+        <action name="reportInformationslist" class="com.ucuh.web.action.jvbao.ReportinformationAction" method="ReportInformationslist">
+          <result name="success">/frame/lesson/jvbaolist.jsp</result>
+        </action>
+        <!-- 删除一条消息 -->
+        <action name="delReportInformationflow" class="com.ucuh.web.action.jvbao.ReportinformationAction" method="delReportInformationflow">
+         <result name="success" type="json"></result>
+        </action>
+        <!-- 批量删除信息 -->
+        <action name="delManyReportInformationflow" class="com.ucuh.web.action.jvbao.ReportinformationAction" method="delManyReportInformationflow">
+          <result name="success" type="json"></result>
+        </action>
+        <!-- 设置状态信息 -->
+        <action name="settReportInformationState" class="com.ucuh.web.action.jvbao.ReportinformationAction" method="settReportInformationState">
+          <result name="success" type="json"></result>
+        </action>
+        <!-- =====================================其它模块======================================================================= -->
+        <!-- 读取标签下的所有照片列表 -->
+        <action name="queryPhotos" class="com.ucuh.web.action.photo.PhotoSearchAction" method="queryPhotos">
+          <result name="success">/frame/lesson/photoslist.jsp</result>
+        </action>
+	</package>
+</struts>

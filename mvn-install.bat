@@ -1,0 +1,11 @@
+cd C:\WorkspaceGit\ucaruhome\hchh\
+cd ./ucuh-objects
+mvn install
+cd ../ucuh-util
+mvn install
+cd ../ucuh-orm
+mvn install
+cd ../ucuh-services
+mvn install
+cd ../ucuh-web
+mvn package

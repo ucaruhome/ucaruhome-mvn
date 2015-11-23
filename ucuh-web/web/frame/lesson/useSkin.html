@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--框架必需start-->
+<script type="text/javascript" src="../js/jquery-1.4.js"></script>
+<script type="text/javascript" src="../js/framework.js"></script>
+<link href="../css/import_basic.css" rel="stylesheet" type="text/css"/>
+<link  rel="stylesheet" type="text/css" id="skin"/>
+<!--框架必需end-->
+<body>
+	在使用某一种皮肤之前首先要选中一种导航结构页作为主页。例如要使用纵向抽屉式导航结构，对应的是nav_accordtion.html。<br />
+		用浏览器打开nav_accordtion.html后，点击右上角的“皮肤管理”，可以看到该结构页面所有的皮肤。鼠标移到某一种皮肤缩略图上，可以看到上面写着如
+		“皮肤名称：orange 主题风格：red”的字样。
+		效果如下：<br />
+		<img src="../images/demo/img18.jpg"/><br />
+		<br />
+		用编辑器打开nav_accordtion.html，可以看到有一句如下代码：
+<textarea class="code">
+<link href="skins/sky/import_skin.css" rel="stylesheet" type="text/css" id="skin" themeColor="blue"/>
+</textarea>
+<pre></pre>
+		将上面代码中路径里的sky换成刚才的“皮肤名称”即orange，将themeColor="blue"中的blue换成刚才的“主题风格”即red。<br />
+		这样就变成了想要的皮肤。至于框架引入的子页面无需做任何修改，每个子页面在初始时都会得到皮肤设置自动适应框架主页。<br />
+		更详细说明请参看使用手册的“使用帮助>>框架皮肤机制说明”
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../js/jquery.appendDom.js"></script>
+<script>
+	$(function(){
+			$('head').appendDom([{tagName  :'script',type : 'text/javascript',src : '../js/hl/highlight.js'}]);
+			$('head').appendDom([{tagName  :'script',type : 'text/javascript',src : '../js/hl/lang-xml.js'}]);
+			$('head').appendDom([{tagName  :'script',type : 'text/javascript',src : '../js/hl/lang-html.js'}]);
+			$('head').appendDom([{tagName  :'link', rel : 'stylesheet',type:'text/css',src : '../js/hl/style.css'}]);
+			setTimeout(showCode,1000)
+	});
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val();
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

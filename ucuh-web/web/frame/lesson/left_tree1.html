@@ -1,0 +1,79 @@
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--框架必需start-->
+<script type="text/javascript" src="../js/jquery-1.4.js"></script>
+<script type="text/javascript" src="../js/framework.js"></script>
+<link href="../css/import_basic.css" rel="stylesheet" type="text/css"/>
+<link  rel="stylesheet" type="text/css" id="skin"/>
+<!--框架必需end-->
+<script type="text/javascript" src="../js/tree/dtree/dtree.js"></script>
+<link href="../js/tree/dtree/dtree.css" rel="stylesheet" type="text/css"/>
+<script>
+	function tishi1(){
+		alert("试用版不含Flash图表的内容！");
+	}
+	function tishi2(){
+		alert("试用版不含应用实例的内容！");
+	}
+</script>
+</head>
+<body leftFrame="true">
+	<div style="text-align:center;" >
+	<br />
+	<a href="javascript: d.openAll();">展开所有</a> | <a href="javascript: d.closeAll();">关闭所有</a>
+	</div>
+	<div id="scrollContent">
+	<script type="text/javascript">
+		
+
+		d = new dTree('d');
+
+		d.add(0,-1,'操作目录');
+		
+		d.add(300,0,'用户管理',null,'','');
+		d.add(2,300,'用户中心管理','yonghuzhongxinGL.jsp','用户中心管理','frmright');
+		d.add(3,300,'认证管理','renzhengGL.html','认证管理','frmright');
+		
+		d.add(301,0,'发布管理',null,'','');
+		d.add(10,301,'未审核','photoFaBuListWSH.action','未审核','frmright');
+		d.add(11,301,'审核通过','photoFaBuList.action','审核通过','frmright');
+		d.add(12,301,'审核未通过','photoFaBuListWTG.action','审核未通过','frmright');
+		
+		
+		d.add(303,0,'标签管理',null,'','');
+		d.add(24,303,'系统标签','readLabelXT.action','系统标签','frmright');
+		d.add(25,303,'用户自定义标签','readLabelCustom.action','用户自定义标签','frmright');
+		d.add(26,303,'新增标签归类','readLabelCustomXZ.action','新增标签归类','frmright');
+		
+		d.add(304,0,'评论管理',null,'','');
+		//d.add(3041,304,'基本表单元素',null,'','');
+		d.add(31,304,'评论列表','commentslist.action','评论列表','frmright');
+	
+		
+		
+		d.add(305,0,'定制屋管理',null,'','');
+		d.add(60,305,'定制屋列表','quanwudingzhislist.action','定制屋列表','frmright');
+		
+		
+		d.add(306,0,'举报管理',null,'','');
+		d.add(70,306,'举报列表','reportInformationslist.action','举报列表','frmright');
+		
+		
+		d.add(307,0,'数据分析',null,'','');
+		//d.add(82,307,'基本树结构','chapter8-1.html','基本树结构','frmright');
+		
+		
+		d.add(308,0,'官方发布',null,'','');
+		d.add(93,308,'照片发布','fabuPage.action','照片发布','frmright');
+		d.add(94,308,'消息发布','/hchh/ueditor.jsp','照片发布','frmright');
+		d.add(95,308,'消息发布列表','newsList.action','照片发布','frmright');
+		document.write(d);
+
+		
+	</script>
+</div>
+
+</body>
+
+</html>

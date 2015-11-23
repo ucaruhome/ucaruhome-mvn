@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+
+	<package name="hchh-phone" extends="hchh-default" namespace="">
+	<!-- 登录 -->
+	<action name="phoneLoginTo" class="com.ucuh.web.action.phone.PhoneUserAction" method="LoginTo">
+	</action>
+	<!-- 发送短信验证 -->
+	<action name="phoneRegistSend" class="com.ucuh.web.action.phone.PhoneUserAction" method="RegistSend">
+	</action>
+	<!-- 注册 RegistUser-->
+	<action name="phoneRegistUser" class="com.ucuh.web.action.phone.PhoneUserAction" method="RegistUser">
+	</action>
+	<!-- 更改用户信息 -->
+	<action name="phoneUpdateUser" class="com.ucuh.web.action.phone.PhoneUserUpdateAction" method="UpdateUser">
+	</action>
+	</package>
+</struts>

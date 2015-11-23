@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-2.5.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+        ">
+    <context:annotation-config />
+	<!--context:component-scan base-package="com.xingao" /-->
+	<aop:aspectj-autoproxy />  
+	  <bean id="dataSource"
+        class="com.mchange.v2.c3p0.ComboPooledDataSource"
+        destroy-method="close">
+        <property name="driverClass">
+            <value>com.mysql.jdbc.Driver</value>
+        </property>
+        <property name="jdbcUrl">
+            <!--value>jdbc:mysql://localhost:3306/hchh?useUnicode=true&amp;characterEncoding=UTF-8</value-->
+			<value>jdbc:mysql://192.168.5.141:3306/hchh?useUnicode=true&amp;characterEncoding=UTF-8</value>
+        </property>
+        <property name="user">
+            <value>root</value>
+        </property>
+        <property name="password">
+            <value>123456</value>
+        </property>
+
+ <!--连接池中保留的最小连接数。-->
+
+        <property name="minPoolSize">
+            <value>3</value>
+        </property>
+
+ <!--连接池中保留的最大连接数。Default: 15 -->
+
+        <property name="maxPoolSize">
+            <value>20</value>
+        </property>
+
+<!--初始化时获取的连接数，取值应在minPoolSize与maxPoolSize之间。Default: 3 -->
+
+        <property name="initialPoolSize">
+            <value>10</value>
+        </property>
+
+ <!--最大空闲时间,60秒内未使用则连接被丢弃。若为0则永不丢弃。Default: 0 -->
+
+        <property name="maxIdleTime">
+            <value>60</value>
+        </property>
+
+ <!--当连接池中的连接耗尽的时候c3p0一次同时获取的连接数。Default: 3 -->
+
+        <property name="acquireIncrement">
+            <value>5</value>
+        </property>
+
+ <!--JDBC的标准参数，用以控制数据源内加载的PreparedStatements数量。但由于预缓存的statements
+  属于单个connection而不是整个连接池。所以设置这个参数需要考虑到多方面的因素。
+  如果maxStatements与maxStatementsPerConnection均为0，则缓存被关闭。Default: 0-->
+
+        <property name="maxStatements">
+            <value>0</value>
+        </property>
+
+
+ <!--每60秒检查所有连接池中的空闲连接。Default: 0 -->
+
+        <property name="idleConnectionTestPeriod">
+            <value>60</value>
+        </property>
+
+ <!--定义在从数据库获取新连接失败后重复尝试的次数。Default: 30 -->
+
+        <property name="acquireRetryAttempts">
+            <value>30</value>
+        </property>
+
+
+ <!--获取连接失败将会引起所有等待连接池来获取连接的线程抛出异常。但是数据源仍有效
+  保留，并在下次调用getConnection()的时候继续尝试获取连接。如果设为true，那么在尝试
+  获取连接失败后该数据源将申明已断开并永久关闭。Default: false-->
+
+        <property name="breakAfterAcquireFailure">
+            <value>true</value>
+        </property>
+
+ <!--因性能消耗大请只在需要的时候使用它。如果设为true那么在每个connection提交的
+  时候都将校验其有效性。建议使用idleConnectionTestPeriod或automaticTestTable
+  等方法来提升连接测试的性能。Default: false -->
+
+        <property name="testConnectionOnCheckout">
+            <value>false</value>
+        </property>
+
+    </bean>
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="mappingResources">
+			<list>
+				<!-- 实体类映射文件的添加 -->
+				<value>com/ucuh/entity/Group.hbm.xml</value>
+				<value>com/ucuh/entity/Power.hbm.xml</value>
+				<value>com/ucuh/entity/Role.hbm.xml</value>
+				<value>com/ucuh/entity/RolePower.hbm.xml</value>
+				<value>com/ucuh/entity/User.hbm.xml</value>
+				<value>com/ucuh/entity/Headphoto.hbm.xml</value>
+				<value>com/ucuh/entity/Wordbook.hbm.xml</value>
+				<value>com/ucuh/entity/UserInformationflow.hbm.xml</value>
+				<value>com/ucuh/entity/Supplier.hbm.xml</value>
+				<value>com/ucuh/entity/ReportInformation.hbm.xml</value>
+				<value>com/ucuh/entity/Quanwudingzhi.hbm.xml</value>
+				<value>com/ucuh/entity/Photo.hbm.xml</value>
+				<value>com/ucuh/entity/Label.hbm.xml</value>
+				<value>com/ucuh/entity/LabelPhoto.hbm.xml</value>
+				<value>com/ucuh/entity/Informationflow.hbm.xml</value>
+				<value>com/ucuh/entity/Distributor.hbm.xml</value>
+				<value>com/ucuh/entity/Designer.hbm.xml</value>
+				<value>com/ucuh/entity/Cost.hbm.xml</value>
+				<value>com/ucuh/entity/Comment.hbm.xml</value>
+				<!-- 2015-10-13 -->
+				<value>com/ucuh/entity/FenLei.hbm.xml</value>
+				<value>com/ucuh/entity/InformationflowFenlei.hbm.xml</value>
+				<!-- 2015-10-21 -->
+				<value>com/ucuh/entity/KgContent.hbm.xml</value>
+				<!-- 2015-10-23 -->
+				<value>com/ucuh/entity/InformationflowRecord.hbm.xml</value>
+				<!-- 2015-10-27 -->
+				<value>com/ucuh/entity/UserRecord.hbm.xml</value>
+				<!-- 2015-10-29 -->
+				<value>com/ucuh/entity/News.hbm.xml</value>
+				<!-- 2015-11-04 -->
+				<value>com/ucuh/entity/Activity.hbm.xml</value>
+				<!-- 2015-11-10 Code.hbm.xml-->
+				<value>com/ucuh/entity/Code.hbm.xml</value>
+			</list>
+		
+		</property>
+	<property name="hibernateProperties">
+             <props>
+                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                 <prop key="hibernate.show_sql">true</prop>
+                 <prop key="hibernate.format_sql">true</prop>
+                 <prop key="hibernate.jdbc.batch_size">50</prop>
+             </props>
+         </property>
+         
+	
+	</bean>
+	<!-- 以下为事务配置 -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<!-- 使用基于注释式配置事务 -->
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+	
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	
+	<!-- dao实现类的创建 -->
+	<bean id="userDaoImpl" class="com.ucuh.dao.impl.UserDaoImpl"/>
+	<bean id="headPhotoDaoImpl" class="com.ucuh.dao.impl.HeadPhotoDaoImpl"/>
+	<bean id="roleDaoImpl" class="com.ucuh.dao.impl.RoleDaoImpl"/>
+	<bean id="groupDaoImpl" class="com.ucuh.dao.impl.GroupDaoImpl"/>
+	<bean id="labelDaoImpl" class="com.ucuh.dao.impl.LabelDaoImpl"/>
+	<bean id="fenLeiDaoImpl" class="com.ucuh.dao.impl.FenLeiDaoImpl"/>
+	<bean id="informationflowDaoImpl" class="com.ucuh.dao.impl.InformationflowDaoImpl"/>
+	<bean id="photoDaoImpl" class="com.ucuh.dao.impl.PhotoDaoImpl"/>
+	<bean id="labelPhotoDaoImpl" class="com.ucuh.dao.impl.LabelPhotoImplDao"/>
+	<bean id="informationflowFenleiDaoImpl" class="com.ucuh.dao.impl.InformationflowFenleiDaoImpl"/>
+	<bean id="kgContentDaoImpl" class="com.ucuh.dao.impl.KgContentDaoImpl"/>
+	<bean id="informationflowRecordDaoImpl" class="com.ucuh.dao.impl.InformationflowRecordDaoImpl"/>
+	<bean id="userRecordDaoImpl" class="com.ucuh.dao.impl.UserRecordDaoImpl"/>
+	<bean id="newsDaoImpl" class="com.ucuh.dao.impl.NewsDaoImpl"/>
+	<bean id="activityDaoImpl" class="com.ucuh.dao.impl.ActivityDaoImpl"/>
+	<bean id="designerDaoImpl" class="com.ucuh.dao.impl.DesignerDaoImpl"/>
+	<bean id="wordbookDaoImpl" class="com.ucuh.dao.impl.WordbookDaoImpl"/>
+	<bean id="supplierDaoImpl" class="com.ucuh.dao.impl.SupplierDaoImpl"/>
+	<bean id="distributorDaoImpl" class="com.ucuh.dao.impl.DistributorDaoImpl"/>
+	<bean id="codeDaoImpl" class="com.ucuh.dao.impl.CodeDaoImpl"/>
+	<bean id="commentDaoImpl" class="com.ucuh.dao.impl.CommentDaoImpl"/>
+	<bean id="quanwudingzhiDaoImpl" class="com.ucuh.dao.impl.QuanwudingzhiDaoImpl"/>
+	<bean id="reportInformationDaoImpl" class="com.ucuh.dao.impl.ReportInformationDaoImpl"/>
+	
+	
+	<!-- service实体类的创建 -->
+	<bean id="commService" class="com.ucuh.service.CommService"/>
+	<!--<bean id="photoLabelService" class="hchh.struts2.service.PhotoLabelService"/>-->
+	<bean id="fileUtilServiceImpl" class="com.ucuh.service.impl.FileUtilServiceImpl"/>
+	
+	
+	<!--======================= 事务的模型 ===================================-->
+	<!--<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="find*" propagation="NOT_SUPPORTED"
+				read-only="true" />
+			<tx:method name="get*" propagation="NOT_SUPPORTED"
+				read-only="true" />
+			<tx:method name="select*" propagation="NOT_SUPPORTED"
+				read-only="true" />
+			<tx:method name="add*" propagation="REQUIRED" />
+			<tx:method name="save*" propagation="REQUIRED" />
+			 <tx:method name="insert*" propagation="REQUIRED" /> 
+			<tx:method name="del*" propagation="REQUIRED" />
+			<tx:method name="delete*" propagation="REQUIRED" />
+			<tx:method name="update*" propagation="REQUIRED" />
+			<tx:method name="do*" propagation="REQUIRED" />
+			 <tx:method name="creat*" propagation="REQUIRED" /> 
+			<tx:method name="*" propagation="SUPPORTS" />
+		</tx:attributes>
+	</tx:advice>
+
+
+	-->
+	<!--======================= 事务的使用 ==================================-->
+	<!--<aop:config>
+		<aop:pointcut id="bizMethods" expression="execution(* wd.*.service.*.*(..))" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="bizMethods" />
+	</aop:config>
+
+
+	<bean id="captchaProducer" class="com.google.code.kaptcha.impl.DefaultKaptcha">  
+        <property name="config">  
+            <bean class="com.google.code.kaptcha.util.Config">  
+                <constructor-arg>  
+                    <props>  
+                        <prop key="kaptcha.border">no</prop>  
+                        <prop key="kaptcha.border.color">105,179,90</prop>  
+                        <prop key="kaptcha.textproducer.font.color">red</prop>  
+                        <prop key="kaptcha.image.width">95</prop>  
+                        <prop key="kaptcha.textproducer.font.size">30</prop>  
+                        <prop key="kaptcha.image.height">40</prop>  
+                        <prop key="kaptcha.session.key">code</prop>  
+                        <prop key="kaptcha.textproducer.char.length">4</prop>
+                        <prop key="kaptcha.textproducer.char.space">6</prop> 
+                        <prop key="kaptcha.noise.impl">com.google.code.kaptcha.impl.NoNoise</prop>
+                        <prop key="kaptcha.textproducer.char.string">0123456789</prop>
+                        <prop key="kaptcha.textproducer.font.names">宋体,楷体,微软雅黑</prop>    
+                    </props>  
+                </constructor-arg>  
+            </bean>  
+        </property>  
+    </bean>  
+-->
+</beans>
