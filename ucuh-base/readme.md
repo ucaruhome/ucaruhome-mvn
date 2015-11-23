@@ -1,3 +1,6 @@
+Git repository:
+https://github.com/ucaruhome/ucaruhome-mvn.git
+
 TODO 11/13/2015 jzhu
 1. Unified exception handling
    异常处理
