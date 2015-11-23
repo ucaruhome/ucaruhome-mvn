@@ -11,11 +11,6 @@
 		  <result name="success">/frame/lesson/xinzengGLY1.jsp</result>
 		</action>
 		
-		<!-- 新增一个管理员用户信息 -->
-		<action name="addAdminUser" class="com.ucuh.web.action.user.AdminUserAction" method="addAdminUser">
-		  <result name="success" type="json"></result>
-		</action>
-		
 		<!-- 查询所有的管理员用户信息 -->
 		<action name="findAdminUsers" class="com.ucuh.web.action.user.AdminUserAction" method="findAdminUsers">
 		  <result name="success">/frame/lesson/guanliyuanZH.jsp</result>
@@ -37,11 +32,11 @@
 		</action>
 		<!-- 新增一个管理员帐户 -->
 		<action name="addAdminUser" class="com.ucuh.web.action.user.AdminUserAction" method="addAdminUser">
-		  <result name="success" type="json"></result>
+		  <result name="success" type="json"/>
 		</action>
 		<!-- 删除一个用户信息 -->
 		<action name="delUser" class="com.ucuh.web.action.user.UserHandleAction" method="delUser">
-		  <result name="success" type="json"></result>
+		  <result name="success" type="json"/>
 		</action>
 		<!-- 查询一个用户信息 -->
 		<action name="queryUser" class="com.ucuh.web.action.user.UserHandleAction" method="queryUser">
@@ -57,7 +52,7 @@
 		</action>
 		<!-- 审核一个待审核用户信息 -->
 		<action name="shenHe" class="com.ucuh.web.action.user.UserShenHeAction" method="shenHe">
-		  <result name="success" type="json"></result>
+		  <result name="success" type="json"/>
 		</action>
 		<!-- 得到更新一个用户的页面 -->
 		<action name="updateUser" class="com.ucuh.web.action.user.UserHandleAction" method="updateUser">
@@ -65,7 +60,7 @@
 		</action>
 		<!-- 保存一个更新的用户 -->
 		<action name="updateUserCommit" class="com.ucuh.web.action.user.UserHandleAction" method="updateUserCommit">
-		  <result name="success" type="json"></result>
+		  <result name="success" type="json"/>
 		</action>
 		
     <!-- 文件下载 -->		
@@ -126,19 +121,19 @@
     </action>
     <!-- 自定义标签转变成系统标签并保存 -->
     <action name="xiTongLabelSave" class="com.ucuh.web.action.label.LabelCommonAction" method="xiTongLabelSave">
-    <result name="success" type="json"></result>
+    <result name="success" type="json"/>
     </action>
     <!-- 删除一个系统标签 -->
     <action name="deleteLabel" class="com.ucuh.web.action.label.LabelDeleteAction" method="deleteLabel">
-    <result name="success" type="json"></result>
+    <result name="success" type="json"/>
     </action>
     <!-- 新增标签到自定义标签的归类 -->
     <action name="labelCustomGL" class="com.ucuh.web.action.label.LabelReadCustomAction" method="labelCustomGL">
-    <result name="success" type="json"></result>
+    <result name="success" type="json"/>
     </action>
     <!-- 新增标签到自定义标签的归类 labelCustomHL-->
     <action name="labelCustomHL" class="com.ucuh.web.action.label.LabelReadCustomAction" method="labelCustomHL">
-    <result name="success" type="json"></result>
+    <result name="success" type="json"/>
     </action>
     <!-- ========================================================================照片发布======================================================================== -->
     <!-- 得到照片发布的页面 -->
@@ -172,7 +167,7 @@
     </action>
     <!-- 删除一条信息流信息 -->
     <action name="delInformationflow" class="com.ucuh.web.action.fabu.InformationflowAction" method="delInformationflow">
-      <result name="success" type="json"></result>
+      <result name="success" type="json"/>
     </action>
     <!-- 得到单个信息流的详细信息 -->
     <action name="queryInformationflow" class="com.ucuh.web.action.fabu.InformationflowAction" method="queryInformationflow">
@@ -184,7 +179,7 @@
     </action>
     <!-- 单个信息流的审核操作 -->
     <action name="shenheInformationflow" class="com.ucuh.web.action.fabu.InformationflowAction"  method="shenheInformationflow">
-      <result name="success" type="json"></result>
+      <result name="success" type="json"/>
     </action>
     <!-- 得到单个信息流的详细信息未审核 -->
     <action name="queryInformationflow_wtg" class="com.ucuh.web.action.fabu.InformationflowAction" method="queryInformationflow">
@@ -192,19 +187,19 @@
     </action>
     <!-- 单个信息流的提交重新审核操作 -->
     <action name="chongxinShenheInformationflow" class="com.ucuh.web.action.fabu.InformationflowAction"  method="chongxinShenheInformationflow">
-      <result name="success" type="json"></result>
+      <result name="success" type="json"/>
     </action>
     <!-- ajax判断当前分类是否存在 -->
     <action name="okInformationflowFenlei" class="com.ucuh.web.action.fabu.InformationflowFenleiAction" method="okInformationflowFenlei">
-     <result name="success" type="json"></result>
+     <result name="success" type="json"/>
     </action>
     <!-- ajax提交保存一份分类 -->
     <action name="addInformationflowFenlei" class="com.ucuh.web.action.fabu.InformationflowFenleiAction" method="addInformationflowFenlei">
-     <result name="success" type="json"></result>
+     <result name="success" type="json"/>
     </action>
     <!-- ajax提交删除一份分类 -->
     <action name="delInformationflowFenlei" class="com.ucuh.web.action.fabu.InformationflowFenleiAction" method="delInformationflowFenlei">
-     <result name="success" type="json"></result>
+     <result name="success" type="json"/>
     </action>
     <!-- 发布管理中的新增标签页面 -->
     <action name="xiTongLabelSelect1" class="com.ucuh.web.action.label.LabelCommonAction" method="xiTongLabelSelect1">
@@ -212,22 +207,22 @@
     </action>
     <!-- 发布管理页面中的标签新增 -->
     <action name="xiTongLabelAdd" class="com.ucuh.web.action.label.LabelCommonAction" method="xiTongLabelAdd">
-    <result name="success" type="json"></result>
+    <result name="success" type="json"/>
     </action>
     
     <!-- 发布管理页面中删除标签 -->
     <action name="xiTongLabelDel" class="com.ucuh.web.action.label.LabelCommonAction" method="xiTongLabelDel">
-     <result name="success" type="json"></result>
+     <result name="success" type="json"/>
     </action>
     
     <!-- 发布管理页面中可购标签的添加 -->
     <action name="addKGLabel" class="com.ucuh.web.action.fabu.PhotoLabelAction" method="addKGLabel">
-     <result name="success" type="json"></result>
+     <result name="success" type="json"/>
     </action>
     
     <!-- 发布管理页面中可购标签的删除 -->
     <action name="delKGLabel" class="com.ucuh.web.action.fabu.PhotoLabelAction" method="delKGLabel">
-     <result name="success" type="json"></result>
+     <result name="success" type="json"/>
     </action>
     
     <!-- 发布管理页面中可购标签地址的编辑 -->
@@ -237,12 +232,12 @@
     
     <!-- 发布管理页面中可购标签地址的保存 -->
     <action name="saveAddress" class="com.ucuh.web.action.fabu.PhotoLabelAction" method="saveAddress">
-     <result name="success" type="json"></result>
+     <result name="success" type="json"/>
     </action>
     
     <!-- ======================================消息的发布========================================================================================================= -->
 	<action name="addNews" class="com.ucuh.web.action.news.NewsAction" method="addNews">
-	 <result name="success" type="json"></result>
+	 <result name="success" type="json"/>
 	</action>
 	<!-- 上传发布消息的封面 -->
 	<action name="newsFengmianfileUpload" class="com.ucuh.web.action.news.FileAction">
@@ -262,12 +257,12 @@
     </action>
     <!-- 删除一条消息记录 -->
     <action name="delOneNews" class="com.ucuh.web.action.news.NewsAction" method="delOneNews">
-      <result name="success" type="json"></result>
+      <result name="success" type="json"/>
     </action>
     <!-- =========================================认证管理======================================================================================================== -->
 	<!-- 设计师认证提交 -->
 	<action name="designerRZ" class="com.ucuh.web.action.renzheng.DesignerAction" method="designerRZ">
-	  <result name="success" type="json"></result>
+	  <result name="success" type="json"/>
 	</action>
 	<!-- 设计师列表 -->
 	<action name="findDesignerUsers" class="com.ucuh.web.action.renzheng.DesignerAction" method="findDesignerUsers">
@@ -279,7 +274,7 @@
 	</action>
 	<!-- 审核一个设计师信息 -->
 	<action name="shenHeDesigner" class="com.ucuh.web.action.renzheng.DesignerAction" method="shenHeDesigner">
-	  <result name="success" type="json"></result>
+	  <result name="success" type="json"/>
 	</action>
 	<!-- findDesignerUsersShenHeOver -->
 	<action name="findDesignerUsersShenHeOver" class="com.ucuh.web.action.renzheng.DesignerAction" method="findDesignerUsersShenHeOver">
@@ -287,7 +282,7 @@
 	</action>
 	<!-- 供应商认证提交 -->
 	<action name="supplierRZ" class="com.ucuh.web.action.renzheng.SupplierAction" method="supplierRZ">
-	  <result name="success" type="json"></result>
+	  <result name="success" type="json"/>
 	</action>
 	<!-- 供应商列表 -->
 	<action name="findSupplierUsers" class="com.ucuh.web.action.renzheng.SupplierAction" method="findSupplierUsers">
@@ -299,7 +294,7 @@
 	</action>
 	<!-- 审核一个供应商信息 -->
 	<action name="shenHeSupplier" class="com.ucuh.web.action.renzheng.SupplierAction" method="shenHeSupplier">
-	  <result name="success" type="json"></result>
+	  <result name="success" type="json"/>
 	</action>
 	<!-- findDesignerUsersShenHeOver -->
 	<action name="findSupplierUsersShenHeOver" class="com.ucuh.web.action.renzheng.SupplierAction" method="findSupplierUsersShenHeOver">

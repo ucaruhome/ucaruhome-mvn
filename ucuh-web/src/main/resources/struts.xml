@@ -6,7 +6,7 @@
 <constant name="struts.multipart.maxSize" value="1073741824"/>
 <constant name="struts.objectFactory" value="spring" />
 <constant name="struts.devMode" value="true"/>
-<constant name="struts.i18n.encoding" value="utf-8"></constant>
+<constant name="struts.i18n.encoding" value="UTF-8"/>
 
 
 	<!-- 设置 Struts2 action的后缀名 -->
