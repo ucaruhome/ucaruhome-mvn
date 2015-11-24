@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - hchh@192.168.5.141" uuid="fe7f3392-ac1a-40a3-84b6-ff74a5ccfe70">
+    <database-info product="MySQL" version="5.1.51-community" jdbc-version="3.0" driver-name="MySQL-AB JDBC Driver" driver-version="mysql-connector-java-5.1.8 ( Revision: ${svn.Revision} )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="hchh"/>
+    <table name="hchh_activity" schema="" catalog="hchh" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="5Li76ZSu" autoIncrement="true"/>
+      <column name="designerId" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="6K6+6K6h5biIaWQ="/>
+      <column name="supplierId" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5L6b5bqU5ZWGaWQ="/>
+      <column name="state" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="54q25oCB77yaMO+8jG51bGws5Luj6KGo5q2j5bi45L2/55So77ybMe+8jOS7o+ihqOS4jeiDveS9v+eUqDsyOuiiq+emgeeUqOOAgg=="/>
+      <column name="distributorId" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="57uP6ZSA5ZWGaWQ="/>
+      <column name="type" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="57G75Z6L77yaMCxudWxsLOS7o+ihqOS4jei3n+W6l+WGhea0u+WKqOS4gOi1t+S9v+eUqO+8mzHvvIzku6PooajkuI7lupflhoXmtLvliqjkuIDotbfkvb/nlKjvvJs="/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="hchh_code" schema="" catalog="hchh" type="TABLE">
+      <column name="userKey" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12" remarks="5Yy65Yir55So5oi355qE5a2X5q61"/>
+      <column name="userCode" sqlType="VARCHAR" precision="6" scale="0" nullable="true" jdbcType="12" remarks="6aqM6K+B56CB"/>
+      <column name="sendOverTime" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93" remarks="5aSx5pWI5pe26Ze0"/>
+    </table>
+    <table name="hchh_comment" schema="" catalog="hchh" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="5Li76ZSu" autoIncrement="true"/>
+      <column name="informationFlowId" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="6K+E6K665LiO5L+h5oGv5rWB5YWz6IGU"/>
+      <column name="userStart" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5Y+R6YCB6ICF"/>
+      <column name="userOver" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5o6l5pS26ICF"/>
+      <column name="content" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1" remarks="5Y+R6YCB55qE5paH5pys5YaF5a65"/>
+      <column name="photoContent" sqlType="BLOB" precision="65535" scale="0" nullable="true" jdbcType="-4" remarks="5Zu+54mH5YaF5a65"/>
+      <column name="state" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="54Wn54mH6K+E6K6655qE54q25oCB77yaMO+8jOacquWIoOmZpO+8mzHvvIzlt7LliKDpmaTvvJs="/>
+      <column name="time" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93" remarks="5Zue5aSN5pe26Ze0"/>
+      <column name="remark" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" remarks="5aSH5rOo"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="comment_informationFlow_Id" columns="informationFlowId" ref-table="hchh_informationflow" ref-schema="" ref-catalog="hchh" ref-columns="id" update-rule="0" delete-rule="0" deferrability="2"/>
+      <foreign-key name="overUser_userId" columns="userOver" ref-table="hchh_user" ref-schema="" ref-catalog="hchh" ref-columns="id" update-rule="0" delete-rule="0" deferrability="2"/>
+      <foreign-key name="startUser_userId" columns="userStart" ref-table="hchh_user" ref-schema="" ref-catalog="hchh" ref-columns="id" update-rule="0" delete-rule="0" deferrability="2"/>
+      <index name="comment_informationFlow_Id" unique="false" columns="informationFlowId"/>
+      <index name="startUser_userId" unique="false" columns="userStart"/>
+      <index name="overUser_userId" unique="false" columns="userOver"/>
+    </table>
+    <table name="hchh_cost" schema="" catalog="hchh" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="5Li76ZSu" autoIncrement="true"/>
+      <column name="costMoney" sqlType="DOUBLE" precision="22" scale="0" nullable="true" jdbcType="8" remarks="6K6+6K6h6LS555So"/>
+      <column name="unit" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12" remarks="5Y2V5L2N"/>
+      <column name="count" sqlType="DOUBLE" precision="22" scale="0" nullable="true" jdbcType="8" remarks="5pWw6YeP"/>
+      <column name="designerId" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="6K6+6K6h5biI"/>
+      <column name="remark" sqlType="VARCHAR" precision="500" scale="0" nullable="true" jdbcType="12" remarks="5aSH5rOo"/>
+      <column name="huxing" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12" remarks="5oi35Z6L"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="cost_distributor_id" columns="designerId" ref-table="hchh_designer" ref-schema="" ref-catalog="hchh" ref-columns="id" update-rule="0" delete-rule="0" deferrability="2"/>
+      <exported-key name="quanwudingzhi_cost_id" table="hchh_quanwudingzhi" schema="" catalog="hchh" columns="costId"/>
+      <index name="cost_distributor_id" unique="false" columns="designerId"/>
+    </table>
+    <table name="hchh_designer" schema="" catalog="hchh" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="5Li76ZSu" autoIncrement="true"/>
+      <column name="userId" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5aSW6ZSu5YWz6IGU55So5oi35L+h5oGv"/>
+      <column name="tel" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12" remarks="6K6+6K6h5biI55S16K+d"/>
+      <column name="phone" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12" remarks="6K6+6K6h5biI5omL5py6"/>
+      <column name="email" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12" remarks="6K6+6K6h5biI6YKu566x"/>
+      <column name="state" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="6K6+6K6h5biI5a6h5qC477yaMO+8jOacquWuoeaguCjlvoXlrqHmoLgp77ybMe+8jOWuoeaguOW3sumAmui/h++8mzLvvIzlrqHmoLjmnKrpgJrov4c7NO+8jOWPlua2iOWuoeaguOOAgg=="/>
+      <column name="remark" sqlType="VARCHAR" precision="500" scale="0" nullable="true" jdbcType="12" remarks="5aSH5rOo"/>
+      <column name="time" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93" remarks="5o+Q5Lqk5pe26Ze0"/>
+      <column name="companyName" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12" remarks="5YWs5Y+45ZCN56ew"/>
+      <column name="position" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12" remarks="5YWs5Y+46IGM5L2N"/>
+      <column name="name" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12" remarks="55yf5a6e5aeT5ZCN"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="designer_user_id" columns="userId" ref-table="hchh_user" ref-schema="" ref-catalog="hchh" ref-columns="id" update-rule="0" delete-rule="0" deferrability="2"/>
+      <exported-key name="cost_distributor_id" table="hchh_cost" schema="" catalog="hchh" columns="designerId"/>
+      <index name="designer_user_id" unique="false" columns="userId"/>
+    </table>
+    <table name="hchh_distributor" schema="" catalog="hchh" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="5Li76ZSu" autoIncrement="true"/>
+      <column name="userId" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="tel" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12" remarks="57uP6ZSA5ZWG55S16K+d"/>
+      <column name="phone" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12" remarks="57uP6ZSA5ZWG5omL5py6"/>
+      <column name="email" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12" remarks="57uP6ZSA5ZWG6YKu5Lu2"/>
+      <column name="state" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="57uP6ZSA5ZWG54q25oCB77yaMO+8jOacquWuoeaguO+8mzHvvIzlrqHmoLjpgJrov4fvvJsyLOWuoeaguOacqumAmui/hw=="/>
+      <column name="remark" sqlType="VARCHAR" precision="500" scale="0" nullable="true" jdbcType="12" remarks="5aSH5rOo"/>
+      <column name="time" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93" remarks="5o+Q5Lqk5pe26Ze0"/>
+      <column name="companyName" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12" remarks="5YWs5Y+45ZCN56ew"/>
+      <column name="position" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12" remarks="6IGM5L2N"/>
+      <column name="name" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12" remarks="55yf5a6e5aeT5ZCN"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="distributor_user_id" columns="userId" ref-table="hchh_user" ref-schema="" ref-catalog="hchh" ref-columns="id" update-rule="0" delete-rule="0" deferrability="2"/>
+      <index name="distributor_user_id" unique="false" columns="userId"/>
+    </table>
+    <table name="hchh_fenlei" schema="" catalog="hchh" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="5Li76ZSu" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12" remarks="5YiG57G75ZCN56ew"/>
+      <column name="des" sqlType="VARCHAR" precision="500" scale="0" nullable="true" jdbcType="12" remarks="5o+P6L+w"/>
+      <column name="photoPath" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12" remarks="5bCB6Z2i"/>
+      <column name="time" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93" remarks="5pe26Ze0"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="fenleiId" table="hchh_informationflow_fenlei" schema="" catalog="hchh" columns="fenleiId"/>
+    </table>
+    <table name="hchh_group" schema="" catalog="hchh" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="5Li76ZSu" autoIncrement="true"/>
+      <column name="groupName" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12" remarks="5YiG57uE5ZCN56ew"/>
+      <column name="groupDes" sqlType="VARCHAR" precision="500" scale="0" nullable="true" jdbcType="12" remarks="5YiG57uE5o+P6L+w"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="group_user" table="hchh_user" schema="" catalog="hchh" columns="groupId"/>
+    </table>
+    <table name="hchh_headphoto" schema="" catalog="hchh" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="headPhotoPath" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12" remarks="5aS05YOP6Lev5b6E"/>
+      <column name="headPhotoState" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5aS05YOP5a6h5qC454q25oCB77yaMO+8jOacquWuoeaguO+8mzHvvIzlrqHmoLjpgJrov4fvvJsy77yM5a6h5qC45pyq6YCa6L+H77yb"/>
+      <column name="userId" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="time" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93" remarks="5LiK5Lyg5pe26Ze0"/>
+      <column name="remark1" sqlType="VARCHAR" precision="500" scale="0" nullable="true" jdbcType="12" remarks="5aSH5rOoMQ=="/>
+      <column name="remark2" sqlType="VARCHAR" precision="500" scale="0" nullable="true" jdbcType="12" remarks="5aSH5rOoMg=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="hchh_informationflow" schema="" catalog="hchh" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="5Li76ZSu" autoIncrement="true"/>
+      <column name="userId" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5L+h5oGv5rWB5YWz6IGU55So5oi35L+h5oGv"/>
+      <column name="theme" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12" remarks="5Li76aKY"/>
+      <column name="des" sqlType="VARCHAR" precision="500" scale="0" nullable="true" jdbcType="12" remarks="5o+P6L+w"/>
+      <column name="state" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5pON5L2c54q25oCB77yaMO+8jOacquWuoeaguO+8mzHvvIzlt7LlrqHmoLjpgJrov4fvvJsy77yM5a6h5qC45pyq6YCa6L+H"/>
+      <column name="remark" sqlType="VARCHAR" precision="500" scale="0" nullable="true" jdbcType="12" remarks="5aSH5rOo"/>
+      <column name="time" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93" remarks="5pON5L2c5pe26Ze0"/>
+      <column name="pinglunNum" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="6K+E6K665pWw"/>
+      <column name="shoucangNum" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="6KKr5pS26JeP5pWw"/>
+      <column name="dianzanNum" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="54K56LWe5pWw"/>
+      <column name="photoNum" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="54Wn54mH5pWw"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="informationFlow_user_id" columns="userId" ref-table="hchh_user" ref-schema="" ref-catalog="hchh" ref-columns="id" update-rule="0" delete-rule="0" deferrability="2"/>
+      <exported-key name="comment_informationFlow_Id" table="hchh_comment" schema="" catalog="hchh" columns="informationFlowId"/>
+      <exported-key name="informationflowId" table="hchh_informationflow_fenlei" schema="" catalog="hchh" columns="informationflowId"/>
+      <exported-key name="record_informationflowId" table="hchh_informationflowrecord" schema="" catalog="hchh" columns="informationflowId"/>
+      <exported-key name="photo_informationFlow_id" table="hchh_photo" schema="" catalog="hchh" columns="InformationFlowId"/>
+      <exported-key name="reportInformation_informationFlow_id" table="hchh_reportinformation" schema="" catalog="hchh" columns="informationFlowId"/>
+      <exported-key name="guanlian_informationFlow1_id" table="hchh_user_informationflow" schema="" catalog="hchh" columns="informationFlowId"/>
+      <index name="informationFlow_user_id" unique="false" columns="userId"/>
+    </table>
+    <table name="hchh_informationflow_fenlei" schema="" catalog="hchh" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="5Li76ZSu" autoIncrement="true"/>
+      <column name="informationflowId" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5bel5L2c5rWB55qESUQ="/>
+      <column name="fenleiId" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5YiG57G755qEaWQ="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="fenleiId" columns="fenleiId" ref-table="hchh_fenlei" ref-schema="" ref-catalog="hchh" ref-columns="id" update-rule="0" delete-rule="0" deferrability="2"/>
+      <foreign-key name="informationflowId" columns="informationflowId" ref-table="hchh_informationflow" ref-schema="" ref-catalog="hchh" ref-columns="id" update-rule="0" delete-rule="0" deferrability="2"/>
+    </table>
+    <table name="hchh_informationflowrecord" schema="" catalog="hchh" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="5Li76ZSu" autoIncrement="true"/>
+      <column name="informationflowId" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5L+h5oGv5rWB55qEaWQ="/>
+      <column name="content" sqlType="VARCHAR" precision="500" scale="0" nullable="true" jdbcType="12" remarks="5a+55L+h5oGv5rWB55qE5pON5L2c"/>
+      <column name="maketime" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93" remarks="5pON5L2c5pe26Ze0"/>
+      <column name="userName" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12" remarks="5pON5L2c55So5oi35ZCN"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="record_informationflowId" columns="informationflowId" ref-table="hchh_informationflow" ref-schema="" ref-catalog="hchh" ref-columns="id" update-rule="0" delete-rule="0" deferrability="2"/>
+      <index name="record_informationflowId" unique="false" columns="informationflowId"/>
+    </table>
+    <table name="hchh_kgcontent" schema="" catalog="hchh" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="5Li76ZSu" autoIncrement="true"/>
+      <column name="photoId" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5Zu+54mH55qEaWQ="/>
+      <column name="kgType" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" remarks="5Y+v6LSt57G75Z6L77yaMO+8jOe6v+S4iu+8jDEs57q/5LiL"/>
+      <column name="content" sqlType="VARCHAR" precision="500" scale="0" nullable="true" jdbcType="12" remarks="5Y+v6LSt5YaF5a65"/>
+      <column name="time" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93" remarks="5re75Yqg5pe26Ze0"/>
+      <column name="labelId" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5qCH562+55qEaWQ="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="kg_labelId" columns="labelId" ref-table="hchh_label" ref-schema="" ref-catalog="hchh" ref-columns="id" update-rule="0" delete-rule="0" deferrability="2"/>
+      <foreign-key name="photoId" columns="photoId" ref-table="hchh_photo" ref-schema="" ref-catalog="hchh" ref-columns="id" update-rule="0" delete-rule="0" deferrability="2"/>
+      <index name="kg_labelId" unique="false" columns="labelId"/>
+    </table>
+    <table name="hchh_label" schema="" catalog="hchh" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="5Li76ZSu" autoIncrement="true"/>
+      <column name="tagName" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12" remarks="5qCH562+5ZCN56ew"/>
+      <column name="parentId" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="54i26IqC54K5aWQ="/>
+      <column name="grade" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5qCH562+562J57qn"/>
+      <column name="remark" sqlType="VARCHAR" precision="500" scale="0" nullable="true" jdbcType="12" remarks="5aSH5rOo"/>
+      <column name="type" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" remarks="MCznlKjmiLfoh6rlrprkuYnmoIfnrb7vvJsx77yM57O757uf5qCH562+"/>
+      <column name="treeCode" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="addTime" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93" remarks="5o6S5bqP5a2X5q61"/>
+      <column name="photoPath" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12" remarks="5qCH562+5bCB6Z2i"/>
+      <column name="photoNum" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="54Wn54mH5pWw6YeP"/>
+      <column name="typeT" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="MDrmma7pgJrmoIfnrb7vvJsx77ya5Zyw54K55qCH562+77ybMu+8muWPr+i0reagh+etvjszOumineWkluagh+etvjs="/>
+      <column name="remark1" sqlType="VARCHAR" precision="500" scale="0" nullable="true" jdbcType="12" remarks="5aSH5rOoMQ=="/>
+      <column name="remark2" sqlType="VARCHAR" precision="500" scale="0" nullable="true" jdbcType="12" remarks="5aSH5rOoMg=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="kg_labelId" table="hchh_kgcontent" schema="" catalog="hchh" columns="labelId"/>
+      <exported-key name="guanlian_label_id" table="hchh_label_photo" schema="" catalog="hchh" columns="labelId"/>
+    </table>
+    <table name="hchh_label_photo" schema="" catalog="hchh" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="5Li76ZSu" autoIncrement="true"/>
+      <column name="photoId" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5Y+R5biD55qE5Zu+54mH"/>
+      <column name="labelId" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5omA5bGe55qE5qCH562+"/>
+      <column name="time" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93" remarks="5re75Yqg55qE5pe26Ze0"/>
+      <column name="remark" sqlType="VARCHAR" precision="500" scale="0" nullable="true" jdbcType="12" remarks="5aSH5rOo"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="guanlian_label_id" columns="labelId" ref-table="hchh_label" ref-schema="" ref-catalog="hchh" ref-columns="id" update-rule="0" delete-rule="0" deferrability="2"/>
+      <foreign-key name="guanlian_photo_id" columns="photoId" ref-table="hchh_photo" ref-schema="" ref-catalog="hchh" ref-columns="id" update-rule="0" delete-rule="0" deferrability="2"/>
+      <index name="guanlian_label_id" unique="false" columns="labelId"/>
+      <index name="guanlian_photo_id" unique="false" columns="photoId"/>
+    </table>
+    <table name="hchh_news" schema="" catalog="hchh" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="theme" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12" remarks="5qCH6aKY"/>
+      <column name="type" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="57G75Z6L77yaMO+8jOS7o+ihqOmAmuefpe+8mzHvvIzku6PooajmtLvliqg="/>
+      <column name="content" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1" remarks="5YaF5a65"/>
+      <column name="time" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93" remarks="5re75Yqg5pe26Ze0"/>
+      <column name="userId" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5paw5aKe55qE55So5oi3aWQ="/>
+      <column name="tanchuangYesOrNo" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5piv5ZCm5by556qX"/>
+      <column name="waplink" sqlType="VARCHAR" precision="300" scale="0" nullable="true" jdbcType="12" remarks="572R6aG16ZO+5o6l"/>
+      <column name="remark" sqlType="VARCHAR" precision="500" scale="0" nullable="true" jdbcType="12" remarks="5aSH5rOo"/>
+      <column name="fengmian" sqlType="VARCHAR" precision="300" scale="0" nullable="true" jdbcType="12" remarks="5b2T5YmN5raI5oGv5bCB6Z2i"/>
+      <column name="content1" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1" remarks="5YaF5a65"/>
+      <column name="remark1" sqlType="VARCHAR" precision="500" scale="0" nullable="true" jdbcType="12" remarks="5aSH5rOoMQ=="/>
+      <column name="remark2" sqlType="VARCHAR" precision="500" scale="0" nullable="true" jdbcType="12" remarks="5aSH5rOoMg=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="hchh_photo" schema="" catalog="hchh" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="5Li76ZSu" autoIncrement="true"/>
+      <column name="userId" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5aSW6ZSu5YWz6IGU5Yiw55So5oi35L+h5oGv"/>
+      <column name="photoPath" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12" remarks="54Wn54mH55qE6Lev5b6E"/>
+      <column name="theme" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12" remarks="5Li76aKY"/>
+      <column name="des" sqlType="VARCHAR" precision="500" scale="0" nullable="true" jdbcType="12" remarks="5o+P6L+w"/>
+      <column name="remark" sqlType="VARCHAR" precision="500" scale="0" nullable="true" jdbcType="12" remarks="5aSH5rOo"/>
+      <column name="InformationFlowId" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="54Wn54mH5LiO5L+h5oGv5rWB5YWz6IGU"/>
+      <column name="time" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93" remarks="5LiK5Lyg5pe26Ze0"/>
+      <column name="type" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12" remarks="6LSt5Lmw57G75Z6L77ya57q/5LiL77yM57q/5LiK77yb"/>
+      <column name="typeDes" sqlType="VARCHAR" precision="500" scale="0" nullable="true" jdbcType="12" remarks="572R5Z2A5oiW6ICF57q/5LiL5Zyw5Z2A"/>
+      <column name="remark1" sqlType="VARCHAR" precision="500" scale="0" nullable="true" jdbcType="12" remarks="5aSH5rOoMQ=="/>
+      <column name="remark2" sqlType="VARCHAR" precision="500" scale="0" nullable="true" jdbcType="12" remarks="5aSH5rOoMg=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="photo_informationFlow_id" columns="InformationFlowId" ref-table="hchh_informationflow" ref-schema="" ref-catalog="hchh" ref-columns="id" update-rule="0" delete-rule="0" deferrability="2"/>
+      <foreign-key name="photo_user_id" columns="userId" ref-table="hchh_user" ref-schema="" ref-catalog="hchh" ref-columns="id" update-rule="0" delete-rule="0" deferrability="2"/>
+      <exported-key name="photoId" table="hchh_kgcontent" schema="" catalog="hchh" columns="photoId"/>
+      <exported-key name="guanlian_photo_id" table="hchh_label_photo" schema="" catalog="hchh" columns="photoId"/>
+      <index name="photo_user_id" unique="false" columns="userId"/>
+      <index name="photo_informationFlow_id" unique="false" columns="InformationFlowId"/>
+    </table>
+    <table name="hchh_power" schema="" catalog="hchh" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="5Li76ZSu" autoIncrement="true"/>
+      <column name="powerName" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12" remarks="5p2D6ZmQ5ZCN56ew"/>
+      <column name="powerDes" sqlType="VARCHAR" precision="500" scale="0" nullable="true" jdbcType="12" remarks="5p2D6ZmQ5o+P6L+w"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="powerId_role" table="hchh_role_power" schema="" catalog="hchh" columns="powerId"/>
+    </table>
+    <table name="hchh_quanwudingzhi" schema="" catalog="hchh" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="5Li76ZSu" autoIncrement="true"/>
+      <column name="userId" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="55Sz6K+355So5oi3"/>
+      <column name="costId" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="6K6+6K6h6LS555So"/>
+      <column name="hourseAdress" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12" remarks="6YeP5oi/5Zyw5Z2A"/>
+      <column name="telAndPhone" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12" remarks="55Sz6K+36ICF55S16K+d"/>
+      <column name="designerId" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="6K6+6K6h5biI"/>
+      <column name="time" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93" remarks="55Sz6K+35pe26Ze0"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="quanwudingzhi_cost_id" columns="costId" ref-table="hchh_cost" ref-schema="" ref-catalog="hchh" ref-columns="id" update-rule="0" delete-rule="0" deferrability="2"/>
+      <foreign-key name="quanwudingzhi_user_id" columns="userId" ref-table="hchh_user" ref-schema="" ref-catalog="hchh" ref-columns="id" update-rule="0" delete-rule="0" deferrability="2"/>
+      <index name="quanwudingzhi_user_id" unique="false" columns="userId"/>
+      <index name="quanwudingzhi_cost_id" unique="false" columns="costId"/>
+    </table>
+    <table name="hchh_reportinformation" schema="" catalog="hchh" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="5Li76ZSu" autoIncrement="true"/>
+      <column name="userId" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5Li+5oql5o+Q5Lqk6ICF"/>
+      <column name="userStartNick" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12" remarks="5Li+5oql5Lq65pi156ew"/>
+      <column name="userOverNick" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12" remarks="6KKr5Li+5oql5Lq65pi156ew"/>
+      <column name="informationFlowId" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5Li+5oql5L+h5oGv5YWz6IGU5L+h5oGv5rWB5L+h5oGv"/>
+      <column name="time" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93" remarks="5Li+5oql5pe26Ze0"/>
+      <column name="state" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5Li+5oql5L+h5oGv5pON5L2c54q25oCB77yaMO+8jOacquWuoeaguO+8mzHvvIzlrqHmoLjpgJrov4fvvJsy77yM5a6h5qC45pyq6YCa6L+H"/>
+      <column name="remark" sqlType="VARCHAR" precision="500" scale="0" nullable="true" jdbcType="12" remarks="5aSH5rOo"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="reportInformationFlow_user_id" columns="userId" ref-table="hchh_user" ref-schema="" ref-catalog="hchh" ref-columns="id" update-rule="0" delete-rule="0" deferrability="2"/>
+      <foreign-key name="reportInformation_informationFlow_id" columns="informationFlowId" ref-table="hchh_informationflow" ref-schema="" ref-catalog="hchh" ref-columns="id" update-rule="0" delete-rule="0" deferrability="2"/>
+      <index name="reportInformationFlow_user_id" unique="false" columns="userId"/>
+      <index name="reportInformation_informationFlow_id" unique="false" columns="informationFlowId"/>
+    </table>
+    <table name="hchh_role" schema="" catalog="hchh" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="5Li76ZSu" autoIncrement="true"/>
+      <column name="roleName" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12" remarks="6KeS6Imy5ZCN56ew"/>
+      <column name="roleDes" sqlType="VARCHAR" precision="500" scale="0" nullable="true" jdbcType="12" remarks="6KeS6Imy5o+P6L+w"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="roleId_power" table="hchh_role_power" schema="" catalog="hchh" columns="roleId"/>
+      <exported-key name="role_user" table="hchh_user" schema="" catalog="hchh" columns="roleId"/>
+    </table>
+    <table name="hchh_role_power" schema="" catalog="hchh" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="roleId" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="powerId" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="remark" sqlType="VARCHAR" precision="500" scale="0" nullable="true" jdbcType="12" remarks="5o+P6L+w"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="powerId_role" columns="powerId" ref-table="hchh_power" ref-schema="" ref-catalog="hchh" ref-columns="id" update-rule="0" delete-rule="0" deferrability="2"/>
+      <foreign-key name="roleId_power" columns="roleId" ref-table="hchh_role" ref-schema="" ref-catalog="hchh" ref-columns="id" update-rule="0" delete-rule="0" deferrability="2"/>
+      <index name="roleId_power" unique="false" columns="roleId"/>
+      <index name="powerId_role" unique="false" columns="powerId"/>
+    </table>
+    <table name="hchh_supplier" schema="" catalog="hchh" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="5Li76ZSu" autoIncrement="true"/>
+      <column name="userId" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5aSW6ZSu5YWz6IGU55So5oi35L+h5oGv"/>
+      <column name="tel" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12" remarks="5L6b5bqU5ZWG55S16K+d"/>
+      <column name="phone" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12" remarks="5L6b5bqU5ZWG5omL5py6"/>
+      <column name="email" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12" remarks="5L6b5bqU5ZWG6YKu5Lu2"/>
+      <column name="state" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5L6b5bqU5ZWG5a6h5qC477yaMO+8jOacquWuoeaguO+8mzHvvIzlrqHmoLjpgJrov4fvvJsy77yM5a6h5qC45pyq6YCa6L+H"/>
+      <column name="remark" sqlType="VARCHAR" precision="500" scale="0" nullable="true" jdbcType="12" remarks="5aSH5rOo"/>
+      <column name="time" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93" remarks="5o+Q5Lqk5pe26Ze0"/>
+      <column name="companyName" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12" remarks="5YWs5Y+45ZCN56ew"/>
+      <column name="position" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12" remarks="6IGM5L2N"/>
+      <column name="name" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12" remarks="55yf5a6e5aeT5ZCN"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="supplier_user_id" columns="userId" ref-table="hchh_user" ref-schema="" ref-catalog="hchh" ref-columns="id" update-rule="0" delete-rule="0" deferrability="2"/>
+      <index name="supplier_user_id" unique="false" columns="userId"/>
+    </table>
+    <table name="hchh_user" schema="" catalog="hchh" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="5Li76ZSu" autoIncrement="true"/>
+      <column name="userName" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12" remarks="5biQ5Y+3"/>
+      <column name="name" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12" remarks="5aeT5ZCN"/>
+      <column name="microblog" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12" remarks="5b6u5Y2a5biQ5Y+3"/>
+      <column name="wechat" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12" remarks="5b6u5L+h5biQ5Y+3"/>
+      <column name="headPhoto" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1" remarks="5aS05YOP"/>
+      <column name="nickName" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12" remarks="5pi156ew"/>
+      <column name="sex" sqlType="VARCHAR" precision="1" scale="0" nullable="true" jdbcType="12" remarks="5oCn5Yir"/>
+      <column name="age" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5bm06b6E"/>
+      <column name="area" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12" remarks="5Zyw5Yy6"/>
+      <column name="webSite" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12" remarks="5Liq5Lq656uZ54K5"/>
+      <column name="personalProfile" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1" remarks="5Liq5Lq6566A5LuL"/>
+      <column name="designer" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4" remarks="6K6+6K6h5biI6K6k6K+B77yaMO+8jOacquiupOivge+8mzHvvIzorqTor4Hlt7Lnu4/mj5DkuqQ7Mi7orqTor4HlrqHmoLjmnKrpgJrov4fvvJszLuiupOivgeWuoeaguOW3sue7j+mAmui/hzs0OuWPlua2iOiupOivgeOAgg=="/>
+      <column name="distributor" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4" remarks="57uP6ZSA5ZWG6K6k6K+B77yaMO+8jOacquiupOivge+8mzHvvIzorqTor4Hlt7Lnu4/mj5DkuqQ7Mi7orqTor4HlrqHmoLjmnKrpgJrov4fvvJszLuiupOivgeWuoeaguOW3sue7j+mAmui/hzQ65Y+W5raI6K6k6K+B44CC"/>
+      <column name="password" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12" remarks="5a+G56CB"/>
+      <column name="remark" sqlType="VARCHAR" precision="500" scale="0" nullable="true" jdbcType="12" remarks="5aSH5rOo"/>
+      <column name="roleId" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="6KeS6ImyaWQ="/>
+      <column name="groupId" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5YiG57uEaWQ="/>
+      <column name="supplier" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5L6b5bqU5ZWG6K6k6K+B77yaMO+8jOacquiupOivge+8mzHvvIzorqTor4Hlt7Lnu4/mj5DkuqQ7Mi7orqTor4HlrqHmoLjmnKrpgJrov4fvvJszLuiupOivgeWuoeaguOW3sue7j+mAmui/hzQ65Y+W5raI6K6k6K+B44CC"/>
+      <column name="birthday" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12" remarks="5Ye655Sf5pel5pyf77yIeXl5eS1NTS1kZO+8iQ=="/>
+      <column name="headPhotoRZ" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5aS05YOP6K6k6K+B77yaMO+8jOacquiupOivge+8mzHvvIzorqTor4Hlt7Lnu4/mj5DkuqQ7Mi7orqTor4HlrqHmoLjmnKrpgJrov4fvvJszLuiupOivgeWuoeaguOW3sue7j+mAmui/h+OAgg=="/>
+      <column name="addtime" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93" remarks="5Yib5bu65pe26Ze0"/>
+      <column name="updatetime" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93" remarks="5pu05paw5pe26Ze0"/>
+      <column name="phone" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12" remarks="5omL5py65Y+356CB"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="group_user" columns="groupId" ref-table="hchh_group" ref-schema="" ref-catalog="hchh" ref-columns="id" update-rule="0" delete-rule="0" deferrability="2"/>
+      <foreign-key name="role_user" columns="roleId" ref-table="hchh_role" ref-schema="" ref-catalog="hchh" ref-columns="id" update-rule="0" delete-rule="0" deferrability="2"/>
+      <exported-key name="overUser_userId" table="hchh_comment" schema="" catalog="hchh" columns="userOver"/>
+      <exported-key name="startUser_userId" table="hchh_comment" schema="" catalog="hchh" columns="userStart"/>
+      <exported-key name="designer_user_id" table="hchh_designer" schema="" catalog="hchh" columns="userId"/>
+      <exported-key name="distributor_user_id" table="hchh_distributor" schema="" catalog="hchh" columns="userId"/>
+      <exported-key name="informationFlow_user_id" table="hchh_informationflow" schema="" catalog="hchh" columns="userId"/>
+      <exported-key name="photo_user_id" table="hchh_photo" schema="" catalog="hchh" columns="userId"/>
+      <exported-key name="quanwudingzhi_user_id" table="hchh_quanwudingzhi" schema="" catalog="hchh" columns="userId"/>
+      <exported-key name="reportInformationFlow_user_id" table="hchh_reportinformation" schema="" catalog="hchh" columns="userId"/>
+      <exported-key name="supplier_user_id" table="hchh_supplier" schema="" catalog="hchh" columns="userId"/>
+      <exported-key name="guanlian_user1_id" table="hchh_user_informationflow" schema="" catalog="hchh" columns="userId"/>
+      <index name="role_user" unique="false" columns="roleId"/>
+      <index name="group_user" unique="false" columns="groupId"/>
+    </table>
+    <table name="hchh_user_informationflow" schema="" catalog="hchh" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="5Li76ZSu" autoIncrement="true"/>
+      <column name="userId" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="55So5oi3"/>
+      <column name="informationFlowId" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5L+h5oGv5rWB"/>
+      <column name="remark" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" remarks="5aSH5rOo"/>
+      <column name="time" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93" remarks="5pS26JeP5pe26Ze0"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="guanlian_informationFlow1_id" columns="informationFlowId" ref-table="hchh_informationflow" ref-schema="" ref-catalog="hchh" ref-columns="id" update-rule="0" delete-rule="0" deferrability="2"/>
+      <foreign-key name="guanlian_user1_id" columns="userId" ref-table="hchh_user" ref-schema="" ref-catalog="hchh" ref-columns="id" update-rule="0" delete-rule="0" deferrability="2"/>
+      <index name="guanlian_user1_id" unique="false" columns="userId"/>
+      <index name="guanlian_informationFlow1_id" unique="false" columns="informationFlowId"/>
+    </table>
+    <table name="hchh_user_record" schema="" catalog="hchh" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="userNameCZ" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12" remarks="5pON5L2c6ICF"/>
+      <column name="userId" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5YWz6IGU55qE55So5oi3"/>
+      <column name="contentCZ" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12" remarks="5pON5L2c55qE5YaF5a65"/>
+      <column name="time" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93" remarks="5pON5L2c5pe26Ze0"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="hchh_wordbook" schema="" catalog="hchh" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="5Li76ZSu" autoIncrement="true"/>
+      <column name="leixing" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12" remarks="57G75Z6L"/>
+      <column name="value" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12" remarks="5b2T5YmN5YC8"/>
+      <column name="remark" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12" remarks="5o+P6L+w"/>
+      <column name="name" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12" remarks="57G75Z6L5ZCN56ew"/>
+      <column name="activityId" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5rS75YqoaWQ="/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+  </data-source>
+</component>

@@ -1,0 +1,18 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" build-on-make="true" name="ucuh-web:Web exploded">
+    <output-path>$PROJECT_DIR$/classes/artifacts/ucuh_web_Web_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="ucuh-web/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="ucuh-web" />
+          <element id="module-output" name="ucuh-base" />
+          <element id="module-output" name="ucuh-objects" />
+          <element id="module-output" name="ucuh-orm" />
+          <element id="module-output" name="ucuh-services" />
+          <element id="module-output" name="ucuh-util" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
