@@ -10,7 +10,7 @@
           <element id="module-output" name="ucuh-objects" />
           <element id="module-output" name="ucuh-orm" />
           <element id="module-output" name="ucuh-services" />
-          <element id="module-output" name="ucuh-util" />
+          <element id="module-output" name="ucuh-common" />
         </element>
       </element>
     </root>

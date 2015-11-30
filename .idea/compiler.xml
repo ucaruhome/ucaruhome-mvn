@@ -24,12 +24,50 @@
         <processorPath useClasspath="true" />
         <module name="ucuc-orm" />
         <module name="ucuc-services" />
-        <module name="ucuh-base" />
-        <module name="ucuh-objects" />
-        <module name="ucuh-orm" />
-        <module name="ucuh-services" />
         <module name="ucuh-util" />
         <module name="ucuh-web" />
+      </profile>
+      <profile default="false" name="Annotation profile for ucuh-services" enabled="true">
+        <sourceOutputDir name="target\generated-sources\annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="ucuh-services" />
+      </profile>
+      <profile default="false" name="Annotation profile for ucuh-objects" enabled="true">
+        <sourceOutputDir name="target\generated-sources\annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="ucuh-objects" />
+      </profile>
+      <profile default="false" name="Annotation profile for ucuh-orm" enabled="true">
+        <sourceOutputDir name="target\generated-sources\annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="ucuh-orm" />
+      </profile>
+      <profile default="false" name="Annotation profile for ucuh-comp-desc" enabled="true">
+        <sourceOutputDir name="target\generated-sources\annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="ucuh-comp-desc" />
+      </profile>
+      <profile default="false" name="Annotation profile for ucuh-oss-integration" enabled="true">
+        <sourceOutputDir name="target\generated-sources\annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="ucuh-oss-integration" />
+      </profile>
+      <profile default="false" name="Annotation profile for ucuh-common" enabled="true">
+        <sourceOutputDir name="target\generated-sources\annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="ucuh-common" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -37,9 +75,12 @@
       <module name="ucuc-services" target="1.5" />
       <module name="ucuh" target="1.5" />
       <module name="ucuh-base" target="1.5" />
-      <module name="ucuh-objects" target="1.5" />
-      <module name="ucuh-orm" target="1.5" />
-      <module name="ucuh-services" target="1.5" />
+      <module name="ucuh-common" target="1.7" />
+      <module name="ucuh-comp-desc" target="1.7" />
+      <module name="ucuh-objects" target="1.7" />
+      <module name="ucuh-orm" target="1.7" />
+      <module name="ucuh-oss-integration" target="1.7" />
+      <module name="ucuh-services" target="1.7" />
       <module name="ucuh-util" target="1.5" />
       <module name="ucuh-web" target="1.5" />
     </bytecodeTargetLevel>

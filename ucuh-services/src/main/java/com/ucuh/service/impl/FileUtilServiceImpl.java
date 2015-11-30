@@ -1,13 +1,13 @@
 package com.ucuh.service.impl;
 
 import com.ucuh.service.FileUtilService;
-import com.ucuh.util.FileUtil;
-import com.ucuh.util.HchhCommonUtil;
-import com.ucuh.util.HchhUtil;
 import com.ucuh.entity.Label;
 import com.ucuh.entity.News;
 import com.ucuh.entity.Photo;
 import com.ucuh.entity.User;
+import com.ucuh.util.FileUtil;
+import com.ucuh.util.HchhCommonUtil;
+import com.ucuh.util.HchhUtil;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -56,7 +56,7 @@ public class FileUtilServiceImpl implements FileUtilService {
         String[] strs1=allPath.split("/"+projectName);
         String allPath1=urlHead+""+strs1[1];
         //=======================================================================
-        boolean okey=HchhCommonUtil.GenerateImage(file, aPath);
+        boolean okey= HchhCommonUtil.GenerateImage(file, aPath);
         if(okey){
         	strs[0]=allPath1;
         	strs[1]=allPath;
@@ -96,10 +96,10 @@ public class FileUtilServiceImpl implements FileUtilService {
 		FileInputStream inputStream = new FileInputStream(f);
         String aPath=path1 + "/"+ fileName;
         //对保存的路径进行修改
-        String allPath=FileUtil.changePath(aPath);
+        String allPath= FileUtil.changePath(aPath);
         //将当前的文件路径变成服务器访问路径=====================================
         //HchhUtil hu=new HchhUtil();
-        Properties prop=HchhUtil.loadProperty();
+        Properties prop= HchhUtil.loadProperty();
         String urlHead=HchhUtil.getUrlHead(prop);
         String projectName=HchhUtil.getProjectName(prop);
         //通过项目名对allPath截取

@@ -3,10 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ucuh-base/ucuh-base.iml" filepath="$PROJECT_DIR$/ucuh-base/ucuh-base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ucuh-common/ucuh-common.iml" filepath="$PROJECT_DIR$/ucuh-common/ucuh-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ucuh-comp-desc/ucuh-comp-desc.iml" filepath="$PROJECT_DIR$/ucuh-comp-desc/ucuh-comp-desc.iml" />
       <module fileurl="file://$PROJECT_DIR$/ucuh-objects/ucuh-objects.iml" filepath="$PROJECT_DIR$/ucuh-objects/ucuh-objects.iml" />
       <module fileurl="file://$PROJECT_DIR$/ucuh-orm/ucuh-orm.iml" filepath="$PROJECT_DIR$/ucuh-orm/ucuh-orm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ucuh-oss-integration/ucuh-oss-integration.iml" filepath="$PROJECT_DIR$/ucuh-oss-integration/ucuh-oss-integration.iml" />
       <module fileurl="file://$PROJECT_DIR$/ucuh-services/ucuh-services.iml" filepath="$PROJECT_DIR$/ucuh-services/ucuh-services.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ucuh-util/ucuh-util.iml" filepath="$PROJECT_DIR$/ucuh-util/ucuh-util.iml" />
       <module fileurl="file://$PROJECT_DIR$/ucuh-web/ucuh-web.iml" filepath="$PROJECT_DIR$/ucuh-web/ucuh-web.iml" />
     </modules>
   </component>
