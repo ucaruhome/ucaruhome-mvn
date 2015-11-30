@@ -25,7 +25,6 @@
         <module name="ucuc-orm" />
         <module name="ucuc-services" />
         <module name="ucuh-util" />
-        <module name="ucuh-web" />
       </profile>
       <profile default="false" name="Annotation profile for ucuh-services" enabled="true">
         <sourceOutputDir name="target\generated-sources\annotations" />
@@ -69,6 +68,13 @@
         <processorPath useClasspath="true" />
         <module name="ucuh-common" />
       </profile>
+      <profile default="false" name="Annotation profile for ucuh-web" enabled="true">
+        <sourceOutputDir name="target\generated-sources\annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="ucuh-web" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="ucuc-orm" target="1.5" />
@@ -82,7 +88,7 @@
       <module name="ucuh-oss-integration" target="1.7" />
       <module name="ucuh-services" target="1.7" />
       <module name="ucuh-util" target="1.5" />
-      <module name="ucuh-web" target="1.5" />
+      <module name="ucuh-web" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
