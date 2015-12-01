@@ -11,7 +11,7 @@ public class ExampleForGetBucketLocation {
     private static final String OSS_ENDPOINT = OSSConfig.OSS_ENDPOINT;
 	public static void main(String [] args){
 		OSSClient client=new OSSClient(OSS_ENDPOINT,ACCESS_ID,ACCESS_KEY);
-		String bucketName = OSSConfig.BUCKET_NAME;
+		String bucketName = OSSConfig.UHOME_BUCKET_NAME;
         try{
             String location = client.getBucketLocation(bucketName);
             System.out.println(location);
