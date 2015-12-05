@@ -2,6 +2,8 @@ package com.ucuh.storage.impl;
 
 
 import com.aliyun.oss.*;
+import com.aliyun.oss.model.Bucket;
+import com.aliyun.oss.model.CannedAccessControlList;
 import com.aliyun.oss.model.GetObjectRequest;
 import com.aliyun.oss.model.ObjectMetadata;
 import com.ucuh.integration.oss.OSSConfig;
@@ -31,6 +33,8 @@ public class OSSFileStorageImpl extends FileStorage {
         //put object to OSS
         client.putObject(bucketName, storageKey.getKey(), input, objectMeta);
         result.setSuccess(Boolean.TRUE);
+        //constructOSSUrl
+        constructOSSUrl(bucketName, result);
         return result;
     }
 
@@ -50,6 +54,8 @@ public class OSSFileStorageImpl extends FileStorage {
             input = new FileInputStream(file);
             client.putObject(bucketName, storageKey.getKey(), input, objectMeta);
             result.setSuccess(Boolean.TRUE);
+            //constructOSSUrl
+            constructOSSUrl(bucketName, result);
         } catch (FileNotFoundException e) {
             result.setMessage(e.getMessage());
             result.setSuccess(Boolean.FALSE);
@@ -62,7 +68,7 @@ public class OSSFileStorageImpl extends FileStorage {
         FileHandleResult result = new FileHandleResult(storageKey);
         OSSClient client = OSSClientFactory.getInstance();
         String bucketName = OSSConfig.UHOME_BUCKET_NAME;
-        client.getObject(new GetObjectRequest(bucketName, storageKey.getKey()),file);
+        client.getObject(new GetObjectRequest(bucketName, storageKey.getKey()), file);
         result.setSuccess(Boolean.TRUE);
         return result;
     }
@@ -80,14 +86,34 @@ public class OSSFileStorageImpl extends FileStorage {
     // 创建Bucket.
     private void ensureBucket(OSSClient client, String bucketName)
             throws OSSException, ClientException {
+        Bucket bucket = null;
         try {
             // 创建bucket
-            client.createBucket(bucketName);
+            bucket = client.createBucket(bucketName);
         } catch (ServiceException e) {
             if (!OSSErrorCode.BUCKET_ALREADY_EXISTS.equals(e.getErrorCode())) {
                 // 如果Bucket已经存在，则忽略
                 throw e;
             }
         }
+        client.setBucketAcl(bucketName, CannedAccessControlList.PublicRead);
+    }
+
+    /**
+     * consutruct the OSS access URL for photo
+     * @param bucketName
+     * @param result
+     * @return http://uhomebucket001.oss-cn-hangzhou.aliyuncs.com/OSSFileStorageImplTest/IMG_0134.JPG
+     */
+    private String constructOSSUrl(String bucketName, FileHandleResult result) {
+        StringBuffer urlStrB = new StringBuffer(OSSConfig.HTTP_PREFIX);
+        urlStrB.append(bucketName).append(OSSConfig.DOT);
+        urlStrB.append(OSSConfig.getInstance().getBucketLocation()).append(OSSConfig.DOT);
+        urlStrB.append(OSSConfig.OSS_DOMAIN).append(OSSConfig.SLASH);
+        urlStrB.append(result.getKey());
+
+        String url = urlStrB.toString();
+        result.setUrl(url);;
+        return url.toString();
     }
 }
