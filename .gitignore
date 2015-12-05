@@ -1,0 +1,22 @@
+workspace.xml
+*.iml
+target
+
+# 以'#'开始的行，被视为注释.
+# 忽略掉所有文件名是 workspace.xml的文件.
+#workspace.xml
+# 忽略所有生成的 iml,
+#*.iml
+# foo.html是手工维护的，所以例外.
+#!foo.html
+# 忽略dbg文件和dbg目录
+#target
+# 只忽略dbg目录，不忽略dbg文件
+#target/
+# 只忽略dbg文件，不忽略dbg目录
+#target
+#!target/
+# 只忽略当前目录下的dbg文件和目录，子目录的dbg不在忽略范围内
+#/target
+
+

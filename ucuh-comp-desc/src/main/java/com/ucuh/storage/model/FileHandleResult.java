@@ -4,8 +4,7 @@ package com.ucuh.storage.model;
  * Created by jzhu on 12/1/2015.
  */
 public class FileHandleResult {
-    String key;              //key for aliyun OSS storage
-    String path;             //path for local storage
+    String key;              //key for aliyun OSS storage, file path + file name
     String url;              //file/photo access URL
     Boolean success;         //flag indiates whether the upload is successfully
     String message;          //success info or error message if any
@@ -15,14 +14,7 @@ public class FileHandleResult {
 
     public FileHandleResult(FileStorageKey key) {
         this.key = key.getKey();
-        this.path = key.getPath();
     }
-
-    public FileHandleResult(String key, String path) {
-        this.key = key;
-        this.path = path;
-    }
-
     public String getUrl() {
         return url;
     }
@@ -37,14 +29,6 @@ public class FileHandleResult {
 
     public void setKey(String key) {
         this.key = key;
-    }
-
-    public String getPath() {
-        return path;
-    }
-
-    public void setPath(String path) {
-        this.path = path;
     }
 
     public Boolean isSuccess() {
